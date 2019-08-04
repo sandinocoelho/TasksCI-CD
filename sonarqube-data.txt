@@ -1,0 +1,8 @@
+jenkins-todolist: 51aebd968b3c147560ba3a2f4660638b92829a7b
+
+
+sonar-scanner \
+  -Dsonar.projectKey=jenkins-todolist \
+  -Dsonar.sources=. \
+  -Dsonar.host.url=http://192.168.33.10:9000 \
+  -Dsonar.login=51aebd968b3c147560ba3a2f4660638b92829a7b
