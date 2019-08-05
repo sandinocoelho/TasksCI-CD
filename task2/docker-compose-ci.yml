@@ -1,0 +1,40 @@
+version: '2'
+services:
+  jenkins:
+    image: 'jenkins/jenkins:lts'
+    labels:
+      kompose.service.type: nodeport
+    ports:
+      - '8080:8080'
+      - '8443:8443'
+      - '50000:50000'
+    volumes:
+      - 'jenkins_data:/jenkins_config'
+  sonarqube:
+    image: 'sandinoandroid/sonarqube:task2'
+    ports:
+      - '9000:9000'
+    volumes:
+      - 'sonarqube_conf:/opt/sonarqube/conf'
+      - 'sonarqube_data:/opt/sonarqube/data'
+      - 'sonarqube_extensions:/opt/sonarqube/extensions'
+  nexus3:
+    image: 'sandinoandroid/nexus:task2'
+    ports:
+      - '8081:8081'
+      - '8082:8082'
+      - '8083:8083'
+    volumes:
+      - 'nexus-data:/nexus-data'
+  
+volumes:
+  jenkins_data:
+    driver: local
+  sonarqube_data:
+    driver: local
+  sonarqube_conf:
+    driver: local
+  sonarqube_extensions:
+    driver: local
+  nexus-data:
+    driver: local
