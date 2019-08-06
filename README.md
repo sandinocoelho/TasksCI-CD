@@ -36,6 +36,7 @@ Todos os arquivos encontram-se no diretório task2.
 
 ## Task 03
 
+
 A Task 3 foi completada usando a interface de linha de comando. Fiz o upload das imagens docker com os comandos:
 
 $ docker login -u admin -p Pk466at2 localhost:8082;
